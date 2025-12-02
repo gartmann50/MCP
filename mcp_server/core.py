@@ -34,7 +34,7 @@ def ping(message: str = "hello") -> str:
 
 ALPACA_API_KEY = os.getenv("ALPACA_API_KEY")
 ALPACA_SECRET_KEY = os.getenv("ALPACA_SECRET_KEY")
-ALPACA_BASE_URL = os.getenv("ALPACA_BASE_URL", "https://paper-api.alpaca.markets")
+ALPACA_BASE_URL = os.getenv("ALPACA_BASE_URL", "https://api.alpaca.markets")
 
 
 def _alpaca_headers() -> dict[str, str]:
@@ -124,3 +124,4 @@ async def polygon_daily_ohlc(symbol: str, date: str) -> dict[str, Any]:
         resp = await client.get(url, params=_polygon_params())
         resp.raise_for_status()
         return resp.json()
+
